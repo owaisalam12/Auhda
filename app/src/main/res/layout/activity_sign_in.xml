@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".Activity.SignInActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/auhda_logo_white" />
+
+
+
+
+        <EditText
+            android:id="@+id/input_email_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_edit"
+            android:drawableLeft="@drawable/ic_mail"
+            android:drawablePadding="5dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/offwhite" />
+        <EditText
+            android:id="@+id/input_password_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_edit"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="5dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/offwhite" />
+
+
+
+
+        <!--<EditText-->
+        <!--android:id="@+id/input_selectImage"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:background="@drawable/bg_edit"-->
+        <!--android:drawableLeft="@drawable/ic_image"-->
+        <!--android:drawablePadding="5dp"-->
+        <!--android:hint="Select Image"-->
+        <!--android:inputType="none"-->
+        <!--android:maxLength="11"-->
+        <!--android:singleLine="true"-->
+        <!--android:focusableInTouchMode="false"-->
+        <!--android:textColor="@color/offwhite" />-->
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_button"
+            android:text="sign in"
+            android:textColor="@color/colorPrimaryDark" />
+
+
+        <TextView
+            android:id="@+id/forgetPassTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:textColor="@color/offwhite"
+            android:text="Forget password?"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/donthaveAccountTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:textColor="@color/offwhite"
+            android:text="Don't have an account? Sign Up here"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</RelativeLayout>
