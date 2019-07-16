@@ -11,46 +11,46 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.core2plus.auhda.API.Responses.auhdaResponse;
-import com.core2plus.auhda.Fragment.BlogDetailsFragment;
-import com.core2plus.auhda.Fragment.BlogFragment;
+import com.core2plus.auhda.API.Responses.jobsResponse;
+import com.core2plus.auhda.Fragment.JobPortalFragment;
+import com.core2plus.auhda.Fragment.JobDetailsFragment;
 import com.core2plus.auhda.R;
 
 import org.jsoup.Jsoup;
 
 import java.util.List;
 
-public class Recycleradapter extends RecyclerView.Adapter<Recycleradapter.MyHolder> implements View.OnClickListener {
+public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.MyHolder> implements View.OnClickListener {
     // TODO: 24-Jun-19 url
 //    private static final String BASE_URL="http://192.168.137.1/food/assets/images/food_image";
     //private static final String BASE_URL = Constants.Img_URL_Available;
     // private static final String BASE_URL="http://core2plus.com/food/assets/images/";
-    List<auhdaResponse> list;
+    List<jobsResponse> list;
     private Context context;
-    private BlogFragment fragment;
-    public Recycleradapter(List<auhdaResponse> list) {
+    private JobPortalFragment fragment;
+    public JobsAdapter(List<jobsResponse> list) {
         this.list = list;
     }
 
-    public Recycleradapter(List<auhdaResponse> list, Context context, BlogFragment fragment) {
+    public JobsAdapter(List<jobsResponse> list, Context context, JobPortalFragment fragment) {
         this.list = list;
         this.context = context;
         this.fragment = fragment;
     }
 
     @Override
-    public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public JobsAdapter.MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.wp_list, parent, false);
-        MyHolder myHolder = new MyHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.wp_jobslist, parent, false);
+        JobsAdapter.MyHolder myHolder = new JobsAdapter.MyHolder(view);
         context = parent.getContext();
         return myHolder;
     }
 
     @Override
-    public void onBindViewHolder(MyHolder holder, int position) {
+    public void onBindViewHolder(JobsAdapter.MyHolder holder, int position) {
 
-        auhdaResponse product = list.get(position);
+        jobsResponse product = list.get(position);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             // the view being shared
             holder.imageView.setTransitionName("transition" + position);
@@ -88,16 +88,16 @@ public class Recycleradapter extends RecyclerView.Adapter<Recycleradapter.MyHold
 
 
     class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView Title, Date;
+        TextView Title, Date, Type;
         ImageView imageView;
-        BlogDetailsFragment blogDetailsFragment;
+        JobDetailsFragment jobDetailsFragment;
         public MyHolder(View itemView) {
             super(itemView);
-            Title = itemView.findViewById(R.id.TitleTextView);
-            Date = itemView.findViewById(R.id.dateTextView);
-            imageView=itemView.findViewById(R.id.imgUrl);
+            Title = itemView.findViewById(R.id.jobTitleTextView);
+            Date = itemView.findViewById(R.id.jobDateTextView);
+            imageView=itemView.findViewById(R.id.jobImgUrl);
             itemView.setOnClickListener(this);
-            blogDetailsFragment=new BlogDetailsFragment();
+            jobDetailsFragment=new JobDetailsFragment();
         }
 
 
@@ -113,12 +113,12 @@ public class Recycleradapter extends RecyclerView.Adapter<Recycleradapter.MyHold
 
                 String content2= Jsoup.parse(content).text();
 
-            Log.d("Recycler", "onClick " + getAdapterPosition() + " ID: " +id+" Content: "+content2);
+                Log.d("Recycler", "onClick " + getAdapterPosition() + " ID: " +id+" Content: "+content2);
 
-                fragment.openMovieDetailFragment(getAdapterPosition(), v.findViewById(R.id.imgUrl));
+                fragment.openMovieDetailFragment(getAdapterPosition(), v.findViewById(R.id.jobImgUrl));
 
 
-        }
+            }
         }
     }
 

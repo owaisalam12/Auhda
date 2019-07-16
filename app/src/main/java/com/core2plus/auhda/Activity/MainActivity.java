@@ -1,32 +1,28 @@
 package com.core2plus.auhda.Activity;
 
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.transition.TransitionInflater;
+import android.view.MenuItem;
+import android.view.View;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.app.ActionBar;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 import com.core2plus.auhda.API.Responses.auhdaResponse;
-import com.core2plus.auhda.API.RetrofitClient;
 import com.core2plus.auhda.Adapter.Recycleradapter;
 import com.core2plus.auhda.Fragment.AboutUsFragment;
 import com.core2plus.auhda.Fragment.BlogFragment;
 import com.core2plus.auhda.Fragment.ContactUsFragment;
-import com.core2plus.auhda.Fragment.GalleryFragment;
 import com.core2plus.auhda.Fragment.HomeFragment;
 import com.core2plus.auhda.Fragment.JobPortalFragment;
 import com.core2plus.auhda.Fragment.ResumeDesigningFragment;
@@ -34,14 +30,8 @@ import com.core2plus.auhda.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-import org.jsoup.Jsoup;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     List<auhdaResponse> listing;
@@ -69,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
        // getAuhdaPosts();
 
 
+        //goToFragment(new ProductFragment(),"HOME_FRAGMENT");
         goToFragment(new HomeFragment(),"HOME_FRAGMENT");
         setTitle("Home");
     }
@@ -131,11 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 //Toast.makeText(MainActivity.this, "About Us", Toast.LENGTH_SHORT).show();
                 closeDrwaer("Blog");
                 break;
-            case R.id.nav_gallery:
-                goToFragment(new GalleryFragment(),"GALLERY_FRAGMENT");
-                //Toast.makeText(MainActivity.this, "About Us", Toast.LENGTH_SHORT).show();
-                closeDrwaer("Gallery");
-                break;
+
             case R.id.nav_contactUs:
                 goToFragment(new ContactUsFragment(),"CONTACT_FRAGMENT");
                 //Toast.makeText(MainActivity.this, "About Us", Toast.LENGTH_SHORT).show();
@@ -217,12 +204,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //
 //            @Override
 //            public void onFailure(Call<List<auhdaResponse>> call, Throwable t) {
-//                Log.v("auhdaErr",t.getMessage().toString());
+//                Log.v("auhdaErr",t.getProductMessage().toString());
 //
 //            }
 //        });
 //
 //    }
 
+    public void showFragmentWithTransition(Fragment current, Fragment newFragment, String tag, View sharedView, String sharedElementName) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        // check if the fragment is in back stack
+        boolean fragmentPopped = fragmentManager.popBackStackImmediate(tag, 0);
+        if (fragmentPopped) {
+            // fragment is pop from backStack
+        } else {
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                current.setSharedElementReturnTransition(TransitionInflater.from(this).inflateTransition(R.transition.default_transition));
+                current.setExitTransition(TransitionInflater.from(this).inflateTransition(android.R.transition.no_transition));
+
+                newFragment.setSharedElementEnterTransition(TransitionInflater.from(this).inflateTransition(R.transition.default_transition));
+                newFragment.setEnterTransition(TransitionInflater.from(this).inflateTransition(android.R.transition.no_transition));
+            }
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.frameContainer, newFragment, tag);
+            fragmentTransaction.addToBackStack(tag);
+            fragmentTransaction.addSharedElement(sharedView, sharedElementName);
+            fragmentTransaction.commit();
+        }
+    }
 
 }

@@ -2,54 +2,42 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="5dp"
     android:layout_marginTop="5dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginBottom="15dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
     app:cardCornerRadius="5dp"
     android:clickable="true"
     android:focusable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
 
-            android:orientation="vertical"
-            >
             <LinearLayout
                 android:id="@+id/back"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:gravity="center"
                 android:layout_marginBottom="10dp"
+
                 >
                 <ImageView
                     android:id="@+id/imgUrl"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/no_image_available"
 
                     />
             </LinearLayout>
-            <ImageView
-                android:layout_toEndOf="@id/back"
-                android:layout_centerVertical="true"
 
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
             <TextView
-                android:id="@+id/TitleTextView"
+                android:id="@+id/titleTextViewDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
@@ -62,7 +50,7 @@
                 android:textSize="16sp"
                 android:textStyle="normal" />
             <TextView
-                android:id="@+id/dateTextView"
+                android:id="@+id/dateTextViewDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -73,10 +61,24 @@
                 android:textColor="@android:color/darker_gray"
                 android:textSize="12sp"
                 android:textStyle="normal" />
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <TextView
+                android:id="@+id/contentTextViewDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:paddingLeft="-5dp"
+                android:layout_toEndOf="@id/date"
+                android:text="Content"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+        </ScrollView>
 
         </LinearLayout>
-
-    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

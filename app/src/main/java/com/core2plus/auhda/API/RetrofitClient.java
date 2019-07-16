@@ -4,11 +4,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    // private static final String BASE_URL = "https://raw.githubusercontent.com/hasancse91/Android-CardView-RecyclerView/master/Related_Data/";
-//   private static final String BASE_URL="http://192.168.137.1/food/API/API.php/";
-   private static final String BASE_URL="http://192.168.137.1/auhda/wp-json/wp/v2/posts/";
 
-    // private static final String BASE_URL="http://www.mocky.io/";
+      private static final String BASE_URL="http://192.168.10.3/woophp/API.php/";
+
+     //private static final String BASE_URL="http://www.mocky.io/v2/";
 
     //singleton instance
     private static RetrofitClient mInstance;
