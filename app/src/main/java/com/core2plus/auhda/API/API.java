@@ -19,19 +19,33 @@ public interface API {
 //    Call<auhdaResponse> getPosts();
 
     //@GET("?fields=id,title,content.rendered,date")
-    @GET("5d1f24b03100003e74ebeafa")
+//    @GET("5d1f24b03100003e74ebeafa")
+//    Call<List<auhdaResponse>> getPosts();
+//
+//    @GET("5d204e08300000520dbb0ae0")
+//    Call<List<jobsResponse>> getJobs();
+
+    @GET("?fx=getPosts")
     Call<List<auhdaResponse>> getPosts();
 
-    @GET("5d204e08300000520dbb0ae0")
+    @GET("?fx=getJobs")
     Call<List<jobsResponse>> getJobs();
+
+
+//       @FormUrlEncoded //with localhost images
+//      @POST("5d2d95862e00006100c57e9a")
+//      Call<productResponse> getProducts(@Field("query") String query);
+
+
+//       @FormUrlEncoded //with auhda.com images
+//      @POST("5d2ec01e340000550064d222")
+//      Call<productResponse> getProducts(@Field("query") String query);
+
 
     @FormUrlEncoded
     @POST("?fx=getProducts")
     Call<productResponse> getProducts(@Field("query") String query);
 
-//       @FormUrlEncoded
-//      @POST("5d2d95862e00006100c57e9a")
-//      Call<productResponse> getProducts(@Field("query") String query);
 
     @FormUrlEncoded
     @POST("?fx=getProductVariations")
@@ -44,8 +58,8 @@ public interface API {
                                     @Field("email") String email,
                                     @Field("phone") String phone,
                                     @Field("payment_method") String payment_method,
-                                    @Field("product_id") String product_id,
-                                    @Field("quantity") String quantity
+                                    @Field("product_id") int product_id,
+                                    @Field("quantity") int quantity
     );
 
 }

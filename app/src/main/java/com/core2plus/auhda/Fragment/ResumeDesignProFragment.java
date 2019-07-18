@@ -2,14 +2,12 @@ package com.core2plus.auhda.Fragment;
 
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.core2plus.auhda.R;
 
@@ -33,10 +31,17 @@ public class ResumeDesignProFragment extends Fragment {
         buttonOrderPro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "resume: Pro clicked!", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getActivity(), "resume: Pro clicked!", Toast.LENGTH_SHORT).show();
+                Bundle args = new Bundle();
+                args.putString("level", "Professional Level");
+                goToFragment(new ProductFragment(),args);
+
             }
         });
         return view;
     }
-
+    private void goToFragment(Fragment fragment, Bundle bundle) {
+        fragment.setArguments(bundle);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer, fragment).addToBackStack(null).commit();
+    }
 }

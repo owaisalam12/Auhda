@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -32,10 +31,17 @@ public class ResumeDesignExecFragment extends Fragment {
         buttonOrderExec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "resume: Exec clicked!", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getActivity(), "resume: Exec clicked!", Toast.LENGTH_SHORT).show();
+                Bundle args = new Bundle();
+                args.putString("level", "Executive Level");
+                goToFragment(new ProductFragment(),args);
+
             }
         });
         return view;
     }
-
+    private void goToFragment(Fragment fragment, Bundle bundle) {
+        fragment.setArguments(bundle);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer, fragment).addToBackStack(null).commit();
+    }
 }

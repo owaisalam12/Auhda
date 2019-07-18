@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -38,15 +37,18 @@ public class ResumeDesignEntryFragment extends Fragment {
         buttonOrderEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "resume: Entry clicked!", Toast.LENGTH_SHORT).show();
-                goToFragment(new ProductFragment(),"PRODUCT_FRAGMENT");
+               // Toast.makeText(getActivity(), "resume: Entry clicked!", Toast.LENGTH_SHORT).show();
+                Bundle args = new Bundle();
+                args.putString("level", "Entry Level");
+                goToFragment(new ProductFragment(),args);
 
             }
         });
 
         return view;
     }
-    private void goToFragment(Fragment fragment, String TAG) {
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer, fragment,TAG).commit();
+    private void goToFragment(Fragment fragment, Bundle bundle) {
+        fragment.setArguments(bundle);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer, fragment).addToBackStack(null).commit();
     }
 }

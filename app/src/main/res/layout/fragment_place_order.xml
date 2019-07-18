@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.PlaceOrderFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Your order"
+            android:layout_gravity="center"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:paddingLeft="15dp"
+            android:textColor="@android:color/darker_gray"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Product"
+                android:textAllCaps="true"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingLeft="15dp"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/profileNameText2"
+                />
+
+            <TextView
+                android:id="@+id/profileName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/profileNameText2"
+                android:layout_alignBottom="@+id/profileNameText2"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:paddingRight="18dp"
+                android:textAllCaps="true"
+                android:textSize="20dp"
+                android:text="Total"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            android:id="@+id/rider_tip_div"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textSize="17dp"
+                android:paddingLeft="15dp"
+                android:textColor="@color/black"
+                android:id="@+id/placeResumeNameText"
+                />
+
+
+
+            <TextView
+                android:id="@+id/placeResumePriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:paddingRight="15dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            android:id="@+id/sub_total_div"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="subtotal"
+                android:textAllCaps="true"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingLeft="15dp"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/profileNameText234"
+                />
+
+
+            <TextView
+                android:id="@+id/placeResumeSubPriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:paddingRight="15dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17dp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/tax_div4"
+            android:layout_below="@+id/toolbar_sign_in"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="vat 10%"
+                android:textAllCaps="true"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingLeft="15dp"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/profileNameText234f"
+                />
+
+
+            <TextView
+                android:id="@+id/placeResumeVat10Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="11dp"
+                android:paddingRight="15dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17dp" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/tax_div"
+            android:layout_below="@+id/toolbar_sign_in"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="total"
+                android:textAllCaps="true"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingLeft="15dp"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/profileNameText2346"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="17dp"
+                android:paddingRight="15dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/placeResumeTotalPriceText"
+                android:textColor="@color/colorPrimary"
+                />
+
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/placeResumePlaceButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_button_outline"
+            android:text="Place Order"
+            android:textColor="@color/colorPrimaryDark" />
+    </LinearLayout>
+</RelativeLayout>
