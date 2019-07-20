@@ -1,11 +1,13 @@
 package com.core2plus.auhda.Activity;
 
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.TransitionInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
    Toolbar toolbar ;
    NavigationView navigationView;
    DrawerLayout drawerLayout;
+   SharedPreferences sharedpreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         listing=new ArrayList<>();
         recyclerAdapter = new Recycleradapter(listing);
         navigationView.setNavigationItemSelectedListener(this);
+        sharedpreferences = getSharedPreferences("profile", Context.MODE_PRIVATE);
        // getAuhdaPosts();
 
 
@@ -129,9 +133,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 closeDrwaer("Contact Us");
                 break;
             case R.id.nav_signOut:
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this,SignUpActivity.class));
-                closeDrwaer("Contact Us");
+                String pass = sharedpreferences.getString("pass", null);
+                String email = sharedpreferences.getString("email", null);
+
+                if (pass != null && email != null) {
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.clear();
+                    editor.commit();
+                    goToFragment(new HomeFragment(),"HOME_FRAGMENT");
+                    closeDrwaer("Home");
+                    Toast.makeText(MainActivity.this, "Sign out successful.", Toast.LENGTH_SHORT).show();
+
+                }else{
+                    Toast.makeText(MainActivity.this, "You are not Sign In.", Toast.LENGTH_SHORT).show();
+
+
+                }
+
+
+
                 break;
 
         }

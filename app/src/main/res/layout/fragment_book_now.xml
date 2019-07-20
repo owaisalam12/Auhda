@@ -31,7 +31,8 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+
             android:src="@drawable/auhda_logo_black" />
 
         <LinearLayout
@@ -139,23 +140,22 @@
                 />
 
             <RadioGroup
-                android:id="@+id/booknow_radioPayment"
+                android:id="@+id/booknow_radioGrPayment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
+                android:checkedButton="@id/booknow_radioBtEasy"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/booknow_radioEasy"
+                    android:id="@+id/booknow_radioBtEasy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:checked="true"
                     android:text="Easy Paisa" />
 
                 <RadioButton
-                    android:id="@+id/booknow_radioBank"
+                    android:id="@+id/booknow_radioBtBank"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Direct Bank Transfer" />
@@ -167,6 +167,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/round_button_outline"
                 android:text="Next"
                 android:textColor="@color/colorPrimaryDark" />

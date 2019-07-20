@@ -28,7 +28,7 @@ public class BookNowFragment extends Fragment {
     }
     EditText editTextFirstName,editTextLastName,editTextEmail,editTextPhone;
     RadioGroup radioGroupPayment;
-    RadioButton radioButtonPayment;
+    RadioButton radioButtonPayMethod;
     String color,firstName,lastName,email,phone,payment,resumeCode,price;
     int quantity,product_id;
     Button buttonbookNow;
@@ -41,7 +41,8 @@ public class BookNowFragment extends Fragment {
         editTextLastName=view.findViewById(R.id.booknow_lastName);
         editTextEmail=view.findViewById(R.id.booknow_email);
         editTextPhone=view.findViewById(R.id.booknow_phone);
-        radioGroupPayment=view.findViewById(R.id.booknow_radioPayment);
+        radioGroupPayment=view.findViewById(R.id.booknow_radioGrPayment);
+
         buttonbookNow=view.findViewById(R.id.booknow_NextButton);
         if(getArguments()!=null){
             color=getArguments().getString("color");
@@ -74,9 +75,9 @@ public class BookNowFragment extends Fragment {
 
                 int selectedId = radioGroupPayment.getCheckedRadioButtonId();
                 Log.v("radio",String.valueOf(selectedId));
-                radioButtonPayment=view.findViewById(selectedId);
-                //payment=radioButtonPayment.getText().toString();
-                Log.v("radio",String.valueOf(payment));
+                radioButtonPayMethod=radioGroupPayment.findViewById(selectedId);
+                payment=radioButtonPayMethod.getText().toString();
+                Log.v("radio2",String.valueOf(payment));
 
                 Bundle args = new Bundle();
                 args.putString("color", color);
@@ -88,8 +89,8 @@ public class BookNowFragment extends Fragment {
                 args.putString("lastName", lastName);
                 args.putString("email", email);
                 args.putString("phone", phone);
-                args.putString("payment", "Direct Bank Transfer");
-
+                args.putString("payment", payment);
+                Log.v("radio",String.valueOf(payment));
 
                 goToFragment(new PlaceOrderFragment(),args);
 

@@ -8,7 +8,7 @@
     android:background="@color/colorPrimaryDark">
     <ImageView
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="25dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/auhda_logo_white"/>

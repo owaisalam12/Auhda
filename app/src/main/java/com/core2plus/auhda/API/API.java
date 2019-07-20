@@ -62,4 +62,14 @@ public interface API {
                                     @Field("quantity") int quantity
     );
 
+
+    @FormUrlEncoded
+    @POST("?fx=signUpUser")
+    Call<orderResponse> signUpUser(@Field("email") String email,@Field("user_pass") String user_pass);
+
+
+    @FormUrlEncoded
+    @POST("?fx=signInUser")
+    Call<orderResponse> signInUser(@Field("email") String email,@Field("user_pass") String user_pass);
+
 }
