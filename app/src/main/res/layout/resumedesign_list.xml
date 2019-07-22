@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="155dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="15dp"
+    app:cardCornerRadius="5dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/back2"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:gravity="center"
+                android:layout_marginBottom="5dp"
+                >
+                <ImageView
+                    android:id="@+id/designImageView"
+                    android:layout_width="145dp"
+                    android:layout_height="185dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/no_image_available"
+
+                    />
+            </LinearLayout>
+            <ImageView
+                android:layout_toEndOf="@id/back"
+                android:layout_centerVertical="true"
+
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/designCodeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_below="@+id/dateTextView"
+                android:layout_toEndOf="@id/date"
+                android:text="B-001"
+                android:textColor="@android:color/black"
+                android:fontFamily="sans-serif-condensed-light"
+                android:textSize="14sp"
+                />
+            />
+            <TextView
+                android:id="@+id/designPriceTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_below="@+id/dateTextView"
+                android:layout_toEndOf="@id/date"
+                android:text="Rs: 700"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/designOrderButton"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_button"
+                android:text="order now"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/colorPrimaryDark" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

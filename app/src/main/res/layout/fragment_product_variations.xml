@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:numberpicker="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.ProductVariationsFragment">
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/loadingIndicator_variations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:indicatorColor="@color/colorPrimaryDark"
+            app:indicatorName="LineSpinFadeLoaderIndicator"
+
+            />
+    <LinearLayout
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+
+        >
+
+
+
+        <ImageView
+            android:id="@+id/designImageView"
+            android:layout_width="200dp"
+            android:layout_height="270dp"
+
+            />
+    </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative"
+        android:padding="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available Colors:"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/resumeColors_spinner"
+                style="@style/spinner_style"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity:"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <com.travijuu.numberpicker.library.NumberPicker
+                android:id="@+id/resumeQuantity_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                numberpicker:min="1"
+                numberpicker:max="10"
+                numberpicker:value="1"
+                numberpicker:unit="1"
+                numberpicker:focusable="false"
+                numberpicker:custom_layout="@layout/number_picker_custom_layout" />
+            <Button
+                android:id="@+id/resumeBookNowButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_button_outline"
+                android:text="Book Now"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.ProductFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/loadingIndicator_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:indicatorName="LineSpinFadeLoaderIndicator"
+        android:visibility="gone"
+        app:indicatorColor="@color/colorPrimaryDark"
+
+        />
+
+    <!--<com.lorentzos.flingswipe.SwipeFlingAdapterView-->
+        <!--android:id="@+id/frame"-->
+        <!--android:background="@color/white"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:rotation_degrees="15.5"-->
+        <!--tools:context=".MyActivity" />-->
+
+</RelativeLayout>
