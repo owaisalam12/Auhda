@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.core2plus.auhda.Adapter.SliderAdapter;
@@ -19,14 +20,14 @@ import com.smarteist.autoimageslider.SliderView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener{
 
 
     public HomeFragment() {
         // Required empty public constructor
     }
     SliderView sliderView;
-
+    CardView cardViewResume,cardViewJob,cardViewHr,cardViewBlog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +36,15 @@ public class HomeFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_home, container, false);
 
         sliderView = view.findViewById(R.id.imageSlider);
+        cardViewResume = view.findViewById(R.id.card_home_resume);
+        cardViewJob = view.findViewById(R.id.card_home_jobPortal);
+        cardViewHr = view.findViewById(R.id.card_home_HR);
+        cardViewBlog = view.findViewById(R.id.card_home_blogs);
+
+        cardViewResume.setOnClickListener(this);
+        cardViewJob.setOnClickListener(this);
+        cardViewBlog.setOnClickListener(this);
+        cardViewHr.setOnClickListener(this);
 
         final SliderAdapter adapter = new SliderAdapter(getContext());
         adapter.setCount(3);
@@ -55,7 +65,32 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        getActivity().setTitle("Home");
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+    switch (view.getId()){
+        case R.id.card_home_resume:
+            goToFragment(new ResumeDesigningFragment());
+            break;
+        case R.id.card_home_jobPortal:
+            goToFragment(new JobPortalFragment());
+
+            break;
+        case R.id.card_home_HR:
+            goToFragment(new HRFragment());
+
+            break;
+        case R.id.card_home_blogs:
+            goToFragment(new BlogFragment());
+
+            break;
+    }
+    }
+    private void goToFragment(Fragment fragment) {
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer, fragment).addToBackStack(null).commit();
     }
 
 }

@@ -76,6 +76,7 @@ public class JobPortalFragment extends Fragment {
 
         startLoading();
         getAuhdaJobs();
+        getActivity().setTitle("Job Portal");
 
         return view;
     }

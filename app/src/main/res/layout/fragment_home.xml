@@ -86,7 +86,7 @@
                 >
 
                 <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/card_view_waterLevel"
+                    android:id="@+id/card_home_resume"
                     android:layout_width="150dp"
                     android:layout_height="170dp"
                     android:layout_margin="10dp"
@@ -105,9 +105,9 @@
                         <ImageView
                             android:layout_width="wrap_content"
 
-                            android:layout_height="57dp"
+                            android:layout_height="50dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/icon_speedometer" />
+                            android:src="@drawable/icons_resume" />
 
                         <TextView
 
@@ -131,11 +131,11 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/card_view_statistics"
+                    android:id="@+id/card_home_jobPortal"
                     android:layout_width="150dp"
                     android:layout_height="170dp"
                     android:layout_margin="10dp"
-                    android:layout_toRightOf="@id/card_view_waterLevel"
+                    android:layout_toRightOf="@id/card_home_resume"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:background="@color/offwhite"
 
@@ -150,10 +150,9 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
-
-                            android:layout_height="57dp"
-                            android:layout_marginTop="3dp"
-                            android:src="@drawable/icons_resume" />
+                            android:layout_marginTop="-10dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/icon_jobportal" />
 
                         <TextView
 
@@ -178,10 +177,10 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/card_view_Records"
+                    android:id="@+id/card_home_HR"
                     android:layout_width="150dp"
                     android:layout_height="170dp"
-                    android:layout_below="@id/card_view_waterLevel"
+                    android:layout_below="@id/card_home_resume"
                     android:layout_margin="10dp"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:background="@color/offwhite"
@@ -200,7 +199,7 @@
 
                             android:layout_height="57dp"
                             android:layout_marginTop="3dp"
-                            android:src="@drawable/icons_tools" />
+                            android:src="@drawable/icons_people_outline" />
 
                         <TextView
 
@@ -225,12 +224,12 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/card_view_about"
+                    android:id="@+id/card_home_blogs"
                     android:layout_width="150dp"
                     android:layout_height="170dp"
-                    android:layout_below="@id/card_view_statistics"
+                    android:layout_below="@id/card_home_jobPortal"
                     android:layout_margin="10dp"
-                    android:layout_toRightOf="@id/card_view_Records"
+                    android:layout_toRightOf="@id/card_home_HR"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:background="@color/offwhite"
 
@@ -255,7 +254,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
-                            android:text="Display Jobs"
+                            android:text="Blogs"
                             android:textColor="@color/colorPrimaryDark" />
                         <TextView
                             android:layout_width="wrap_content"
@@ -263,7 +262,7 @@
                             android:layout_margin="2dp"
                             android:gravity="center"
                             android:textSize="12sp"
-                            android:text="Mauris varius quis nunc id sagittis. Curabitur at lacinia tellus. Pellentesque vel."
+                            android:text="Mauris varius quis nunc id sagittis. "
                             android:textColor="@color/colorPrimaryDark" />
 
 

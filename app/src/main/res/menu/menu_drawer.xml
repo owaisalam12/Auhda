@@ -8,9 +8,7 @@
         <item
             android:id="@+id/nav_home"
             android:title="Home"/>
-        <item
-            android:id="@+id/nav_aboutUs"
-            android:title="About Us"/>
+
         <item
             android:id="@+id/nav_resumeDesigning"
             android:title="Resume Designing"/>
@@ -20,6 +18,10 @@
         <item
             android:id="@+id/nav_blog"
             android:title="Blog"/>
+
+        <item
+            android:id="@+id/nav_aboutUs"
+            android:title="About Us"/>
 
         <item
             android:id="@+id/nav_contactUs"

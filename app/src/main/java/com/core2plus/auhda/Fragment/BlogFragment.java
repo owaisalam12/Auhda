@@ -77,6 +77,7 @@ public class BlogFragment extends Fragment {
 
         startLoading();
         getAuhdaJobPosts();
+        getActivity().setTitle("Blogs");
 
         return view;
     }
